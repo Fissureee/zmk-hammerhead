@@ -5,7 +5,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { 
+        default_layer { // Layer 0
             display-name = "Base";
             // ┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
             // │ Q  │ W  │ E  │ R  │ T  │ Y  │ U  │ I  │ O  │ P  │
@@ -16,11 +16,21 @@
             // └────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
             //      │Ctrl│Win │Alt │Bksp│Spc │Alt │Ctrl│Shft│
             bindings = <
-                &kp Q   &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A   &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp ENTER
-                &kp Z   &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                        &kp LCTRL   &kp LWIN    &kp LALT    &kp BSPC    &kp SPACE   &kp RALT    &kp RCTRL   &kp RSHFT
+                &kp Q   &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I           &kp O       &kp P
+                &kp A   &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K           &kp L       &kp ENTER
+                &kp Z   &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA       &kp DOT     &kp SLASH
+                        &kp LCTRL   &kp LWIN    &kp LALT    &kp BSPC    &kp SPACE   &kp RALT    &mo BLUETOOTH   &kp RSHFT
             >;
+        };
+
+        bluetooth_layer { // Layer 1
+            display-name = "BLE";
+            bindings = <
+                &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_DISC 4
+                &none           &none           &bt BT_PRV      &bt BT_NXT      &none           &none           &none           &none           &none           &none
+                &none           &none           &none           &none           &none           &out OUT_BLE    &out OUT_USB    &bt BT_CLR_ALL  &bt BT_CLR      &none 
+                                &none           &none           &none           &none           &none           &none           &none           &none
+                >;
         };
     };
  };
