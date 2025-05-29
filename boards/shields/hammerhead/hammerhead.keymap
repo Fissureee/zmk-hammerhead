@@ -1,0 +1,26 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer { 
+            display-name = "Base";
+            // ┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
+            // │ Q  │ W  │ E  │ R  │ T  │ Y  │ U  │ I  │ O  │ P  │
+            // ├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
+            // │ A  │ S  │ D  │ F  │ G  │ H  │ J  │ K  │ L  │Entr│
+            // ├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
+            // │ Z  │ X  │ C  │ V  │ B  │ N  │ M  │ ,  │ .  │ /  │
+            // └────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
+            //      │Ctrl│Win │Alt │Bksp│Spc │Alt │Ctrl│Shft│
+            bindings = <
+                &kp Q   &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
+                &kp A   &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp ENTER
+                &kp Z   &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH
+                        &kp LCTRL   &kp LWIN    &kp LALT    &kp BSPC    &kp SPACE   &kp RALT    &kp RCTRL   &kp RSHFT
+            >;
+        };
+    };
+ };

@@ -1,0 +1,8 @@
+file_format: "1"
+id: hammerhead
+name: Hammerhead
+type: shield
+url: https://github.com/Fissureee/zmk-hammerhead
+requires: [pro_micro]
+features:
+  - keys
