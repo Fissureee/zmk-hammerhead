@@ -1,54 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "mouse.dtsi"
-
-&mt {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-};
-
-&lt {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-};
-
-&mo {
-    compatible = "zmk,behavior-momentary-layer";
-    #binding-cells = <1>;
-};
-
-&sk {
-    compatible = "zmk,behavior-sticky-key";
-    #binding-cells = <1>;
-};
-
-&bt {
-    compatible = "zmk,behavior-bluetooth";
-    #binding-cells = <2>;
-};
-
-&out {
-    compatible = "zmk,behavior-output-select";
-    #binding-cells = <1>;
-};
-
-&kp {
-    compatible = "zmk,behavior-key-press";
-    #binding-cells = <1>;
-};
-
-&none {
-    compatible = "zmk,behavior-none";
-};
-
-&trans {
-    compatible = "zmk,behavior-transparent";
-};
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     keymap {
@@ -67,10 +20,10 @@
         default_layer { // Layer 0
             display-name = "Base";
             bindings = <
-                &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &kp S       &kp D       &kp F       &kp G               &kp H       &kp J       &kp K       &kp L       &kp ENTER
-                &kp Z       &kp X       &kp C       &kp V       &kp B               &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                            &kp LCTRL   &kp LWIN    &kp LALT    &kp BSPC            &kp SPACE   &kp RALT    &kp RCTRL   &kp RSHFT
+                &kp Q           &kp W       &kp E       &kp R       &kp T               &kp Y         &kp U       &kp I       &kp O       &kp P
+                &kp A           &kp S       &kp D       &kp F       &kp G               &kp H         &kp J       &kp K       &kp L       &kp ENTER
+                &mt LSHFT Z     &kp X       &kp C       &kp V       &kp B               &kp N         &kp M       &kp COMMA   &kp DOT     &mt RSHFT SLASH
+                                &kp LCTRL   &kp LALT    &kp BSPC    &lt 1 SPACE         &lt 2 SPACE   &kp RALT    &kp RCTRL   &kp RSHFT
             >;
         };
 
