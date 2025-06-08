@@ -6,6 +6,10 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+    &msc {
+    acceleration-exponent = <1>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
