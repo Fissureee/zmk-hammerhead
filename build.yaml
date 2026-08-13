@@ -20,6 +20,6 @@
 ---
 
 include:
-  - board: nice_nano_v2
+  - board: nice_nano_v2_zmk
     shield: hammerhead
     artifact-name: hammerhead
